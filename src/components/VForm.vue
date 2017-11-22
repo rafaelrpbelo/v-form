@@ -1,17 +1,7 @@
 <template>
   <div>
     <form>
-      <div class='form-row'>
-        <div class='form-group col'>
-          <label for='firstName'>First Name</label>
-          <input type='text' class='form-control' id='firstName' placeholder='First Name' v-model='firstName'>
-        </div>
-
-        <div class='form-group col'>
-          <label for='lastName'>Last Name</label>
-          <input type='text' class='form-control' id='lastName' placeholder='Last Name' v-model='lastName'>
-        </div>
-      </div>
+      <full-name-input v-model='fullName'></full-name-input>
 
       <div class='form-group'>
         <div class='form-check'>
@@ -122,11 +112,14 @@
 </template>
 
 <script>
+  import FullNameInput from './FullNameInput'
+
   export default {
     data() {
       return {
         firstName: '',
         lastName: '',
+        fullName: '',
         checkOptions: [],
         radioOption: null,
         selectedOption: null,
@@ -137,6 +130,9 @@
       submit() {
         this.submitted = true;
       }
+    },
+    components: {
+      fullNameInput: FullNameInput
     }
   }
 </script>
