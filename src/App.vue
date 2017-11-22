@@ -1,10 +1,13 @@
 <template>
-  <div id="app">
-  </div>
+  <v-form></v-form>
 </template>
 
 <script>
-</script>
+  import VForm from './components/VForm.vue'
 
-<style lang="scss">
-</style>
+  export default {
+    components: {
+      vForm: VForm
+    }
+  }
+</script>
